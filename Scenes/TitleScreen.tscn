@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://background.tres" type="StyleBox" id=1]
+[ext_resource path="res://Fonts/Anonymous_Pro/AnonymousPro-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Buttons/start_button.png" type="Texture" id=3]
+[ext_resource path="res://Buttons/start_button_pressed.png" type="Texture" id=4]
+[ext_resource path="res://button scripts/Start.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_color = Color( 0.690196, 0.215686, 0.431373, 1 )
+font_data = ExtResource( 2 )
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 432.0
+margin_bottom = 768.0
+custom_styles/panel = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_right = 432.0
+margin_bottom = 768.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+
+[node name="Menu" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 417.0
+margin_bottom = 753.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/Menu"]
+self_modulate = Color( 1, 0.94902, 0.94902, 1 )
+margin_left = 8.0
+margin_right = 393.0
+margin_bottom = 101.0
+size_flags_horizontal = 4
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0.690196, 0.215686, 0.431373, 1 )
+custom_constants/shadow_offset_x = 6
+custom_constants/shadow_offset_y = 2
+text = "PyBuddy"
+
+[node name="Buttons" type="VBoxContainer" parent="PanelContainer/MarginContainer/Menu"]
+margin_top = 105.0
+margin_right = 402.0
+margin_bottom = 738.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="TextureButton" parent="PanelContainer/MarginContainer/Menu/Buttons"]
+margin_left = 76.0
+margin_right = 326.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 250, 75 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+expand = true
+stretch_mode = 4
+script = ExtResource( 5 )

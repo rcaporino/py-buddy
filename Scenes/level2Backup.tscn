@@ -1,0 +1,172 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Intro.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Level2.gd" type="Script" id=2]
+[ext_resource path="res://images/dialog.png" type="Texture" id=3]
+[ext_resource path="res://images/dialog2.png" type="Texture" id=4]
+
+[node name="Level2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 432.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 432, 768 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer"]
+margin_right = 432.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 432, 738 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer"]
+margin_right = 432.0
+margin_bottom = 835.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 417.0
+margin_bottom = 820.0
+rect_min_size = Vector2( 402, 738 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2"]
+margin_right = 402.0
+margin_bottom = 59.0
+custom_colors/font_color = Color( 0.690196, 0.215686, 0.431373, 1 )
+custom_colors/font_color_shadow = Color( 0.2, 0.196078, 0.196078, 1 )
+custom_constants/shadow_offset_x = 4
+custom_constants/shadow_offset_y = 2
+text = "Variables"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2"]
+margin_top = 63.0
+margin_right = 402.0
+margin_bottom = 805.0
+
+[node name="Lesson" type="HBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_right = 402.0
+margin_bottom = 638.0
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson"]
+margin_right = 402.0
+margin_bottom = 638.0
+size_flags_horizontal = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer"]
+margin_right = 402.0
+margin_bottom = 638.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer"]
+margin_right = 402.0
+margin_bottom = 638.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer/VBoxContainer"]
+margin_right = 402.0
+margin_bottom = 495.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 16
+custom_constants/margin_top = 20
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 16.0
+margin_top = 20.0
+margin_right = 386.0
+margin_bottom = 495.0
+rect_min_size = Vector2( 0, 475 )
+size_flags_vertical = 0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "To solve this puzzle you will need to learn a little bit about variables.
+
+[font=res://Fonts/open_sans_26.tres][color=#ffffff]What is a Variable?[/color][/font]
+Variables are used to store information to be referenced and manipulated in a computer program. They also provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves. It is helpful to think of variables as containers that hold information. Their sole purpose is to label and store data in memory. This data can then be used throughout your program.
+
+In python to declare a variable all you have to do is name it and set it equal to what you are trying to store.
+Here is an example:"
+text = "To solve this puzzle you will need to learn a little bit about variables.
+
+What is a Variable?
+Variables are used to store information to be referenced and manipulated in a computer program. They also provide a way of labeling data with a descriptive name, so our programs can be understood more clearly by the reader and ourselves. It is helpful to think of variables as containers that hold information. Their sole purpose is to label and store data in memory. This data can then be used throughout your program.
+
+In python to declare a variable all you have to do is name it and set it equal to what you are trying to store.
+Here is an example:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer/VBoxContainer"]
+margin_top = 499.0
+margin_right = 402.0
+margin_bottom = 558.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 16
+custom_constants/margin_top = 0
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 9
+
+[node name="variableExample" type="TextEdit" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer/VBoxContainer/MarginContainer2"]
+margin_left = 16.0
+margin_right = 386.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+text = "name = \"Joe\""
+readonly = true
+syntax_highlighting = true
+show_line_numbers = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer/VBoxContainer"]
+margin_top = 562.0
+margin_right = 402.0
+margin_bottom = 638.0
+custom_constants/margin_right = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 26
+
+[node name="variableExample2" type="RichTextLabel" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/Lesson/MarginContainer/VBoxContainer/MarginContainer3"]
+margin_left = 16.0
+margin_right = 386.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+text = "We can use a variable to store someones name and then print it to the console! Lets give it a try."
+
+[node name="solution" type="HBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+margin_top = 642.0
+margin_right = 402.0
+margin_bottom = 742.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/solution"]
+margin_right = 402.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/solution/MarginContainer"]
+margin_right = 402.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+texture = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/ScrollContainer/MarginContainer/VBoxContainer2/VBoxContainer/solution/MarginContainer"]
+margin_right = 402.0
+margin_bottom = 100.0

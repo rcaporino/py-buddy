@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Intro.tres" type="Theme" id=1]
+[ext_resource path="res://ScrollContainer.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/TestTitleFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://itemlists/itemlist_level1.gd" type="Script" id=4]
+[ext_resource path="res://button scripts/print_level1.gd" type="Script" id=5]
+[ext_resource path="res://button scripts/helloworld_level1.gd" type="Script" id=6]
+[ext_resource path="res://play.png" type="Texture" id=7]
+[ext_resource path="res://playpressed.png" type="Texture" id=8]
+[ext_resource path="res://button scripts/run_level1.gd" type="Script" id=9]
+
+
+
+
+
+[node name="ScrollContainer" type="ScrollContainer"]
+margin_right = 432.0
+margin_bottom = 1000.0
+rect_min_size = Vector2( 432, 1000 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 432.0
+margin_bottom = 297.0
+custom_constants/margin_right = 15
+custom_constants/margin_top = 15
+custom_constants/margin_left = 15
+custom_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 417.0
+margin_bottom = 282.0
+rect_min_size = Vector2( 402, 0 )
+size_flags_horizontal = 0
+custom_constants/separation = 17
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 402.0
+margin_bottom = 59.0
+size_flags_vertical = 0
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer"]
+margin_right = 402.0
+margin_bottom = 59.0
+custom_fonts/font = ExtResource( 3 )
+text = "Learning Python"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 402.0
+margin_bottom = 90.0
+size_flags_vertical = 0
+text = "This is what some Python code might look like:"
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/VBoxContainer"]
+margin_top = 107.0
+margin_right = 150.0
+margin_bottom = 137.0
+rect_min_size = Vector2( 150, 30 )
+size_flags_horizontal = 0
+text = "print(\"Hello World\")"
+readonly = true
+syntax_highlighting = true
+show_line_numbers = true
+
+[node name="submit" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_left = 345.0
+margin_top = 154.0
+margin_right = 402.0
+margin_bottom = 174.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+text = "Submit"
+
+[node name="myProblem" type="ItemList" parent="MarginContainer/VBoxContainer"]
+margin_top = 191.0
+margin_right = 402.0
+margin_bottom = 200.0
+size_flags_vertical = 0
+allow_reselect = true
+auto_height = true
+max_columns = 4
+script = ExtResource( 4 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 217.0
+margin_right = 402.0
+margin_bottom = 267.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 100.0
+margin_bottom = 50.0
+
+[node name="print" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 100.0
+margin_bottom = 20.0
+size_flags_vertical = 0
+text = "print()"
+script = ExtResource( 5 )
+
+[node name="helloWorld" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 24.0
+margin_right = 100.0
+margin_bottom = 44.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "\"Hello World\""
+script = ExtResource( 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 104.0
+margin_right = 402.0
+margin_bottom = 50.0
+size_flags_horizontal = 11
+size_flags_vertical = 8
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_left = 248.0
+margin_right = 298.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 9 )
